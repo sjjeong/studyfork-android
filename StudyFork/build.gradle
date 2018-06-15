@@ -45,4 +45,5 @@ ext {
     okHttpVersion = '3.8.1'
     retrofitVersion = '2.3.0'
 
+    glideVersion = '4.7.1'
 }
