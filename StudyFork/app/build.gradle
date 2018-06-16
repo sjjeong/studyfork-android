@@ -64,4 +64,10 @@ dependencies {
     // Glide
     implementation "com.github.bumptech.glide:glide:$glideVersion"
     annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
+
+    // Firebase
+    implementation "com.google.firebase:firebase-core:$firebaseVersion"
+    implementation "com.google.firebase:firebase-firestore:$firebaseVersion"
 }
+
+apply plugin: 'com.google.gms.google-services'
