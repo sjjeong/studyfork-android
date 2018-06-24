@@ -1,13 +1,12 @@
 package com.googry.studyfork.base.ui
 
-import android.app.Application
-import android.arch.lifecycle.AndroidViewModel
+import android.arch.lifecycle.ViewModel
 import com.googry.studyfork.base.source.BaseDataSource
 import io.reactivex.disposables.CompositeDisposable
 
-abstract class BaseViewModel(application: Application,
-                             var baseDataSource: BaseDataSource? = null) :
-        AndroidViewModel(application) {
+abstract class BaseViewModel(
+        var baseDataSource: BaseDataSource? = null) :
+        ViewModel() {
     protected val compositeDisposable = CompositeDisposable()
 
     override fun onCleared() {

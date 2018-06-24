@@ -6,6 +6,8 @@ import com.googry.studyfork.R
 import com.googry.studyfork.base.ui.BaseActivity
 import com.googry.studyfork.databinding.DevActivityBinding
 import com.googry.studyfork.ui.main.MainActivity
+import com.googry.studyfork.ui.mentor_list.MentorListActivity
+import com.googry.studyfork.ui.profile.ProfileActivity
 
 class DevActivity :
         BaseActivity<DevActivityBinding>(R.layout.dev_activity) {
@@ -22,6 +24,8 @@ class DevActivity :
         startActivity(Intent(this,
                 when (activityName) {
                     "MainActivity" -> MainActivity::class.java
+                    "ProfileActivity" -> ProfileActivity::class.java
+                    "MentorListActivity" -> MentorListActivity::class.java
                     else -> error("Unknown Activity")
                 }))
     }

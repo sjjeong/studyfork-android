@@ -16,6 +16,7 @@ abstract class BaseFragment<B : ViewDataBinding>(private val layoutId: Int) : Fr
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
+        binding.setLifecycleOwner(this)
         return binding.root
     }
 

@@ -1,5 +1,6 @@
 package com.googry.studyfork.base.ui
 
+import android.databinding.BindingAdapter
 import android.support.v7.widget.RecyclerView
 import io.reactivex.subjects.PublishSubject
 
@@ -16,7 +17,7 @@ abstract class BaseRecyclerViewAdapter<ITEM : Any>
         }
     }
 
-    fun restoreAll(items: List<ITEM>?) {
+    fun replaceAll(items: List<ITEM>?) {
         items?.let {
             data.run {
                 clear()
