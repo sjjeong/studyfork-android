@@ -69,6 +69,9 @@ dependencies {
     // Firebase
     implementation "com.google.firebase:firebase-core:$firebaseVersion"
     implementation "com.google.firebase:firebase-firestore:$firebaseVersion"
+
+    // CircleImageView
+    implementation "de.hdodenhof:circleimageview:$circleImageViewVersion"
 }
 
 apply plugin: 'com.google.gms.google-services'

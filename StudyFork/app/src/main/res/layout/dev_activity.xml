@@ -25,11 +25,6 @@
                 android:layout_height="wrap_content" />
             <Button
                 android:layout_width="match_parent"
-                android:onClick='@{() -> activity.onStartActivityClick("ProfileActivity")}'
-                android:text="ProfileActivity"
-                android:layout_height="wrap_content" />
-            <Button
-                android:layout_width="match_parent"
                 android:onClick='@{() -> activity.onStartActivityClick("MentorListActivity")}'
                 android:text="MentorListActivity"
                 android:layout_height="wrap_content" />

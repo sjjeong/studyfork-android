@@ -1,6 +1,5 @@
 package com.googry.studyfork.base.ui
 
-import android.databinding.BindingAdapter
 import android.support.v7.widget.RecyclerView
 import io.reactivex.subjects.PublishSubject
 
@@ -29,6 +28,9 @@ abstract class BaseRecyclerViewAdapter<ITEM : Any>
     fun clear() {
         data.clear()
     }
+
+    fun getItem(position: Int) = data[position]
+
 
     override fun getItemCount(): Int = data.size
 

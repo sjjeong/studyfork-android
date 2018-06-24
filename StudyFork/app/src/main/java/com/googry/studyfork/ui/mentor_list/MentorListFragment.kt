@@ -3,7 +3,9 @@ package com.googry.studyfork.ui.mentor_list
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import com.google.firebase.firestore.FirebaseFirestore
@@ -15,6 +17,8 @@ import com.googry.studyfork.data.model.Profile
 import com.googry.studyfork.data.source.ProfileRepository
 import com.googry.studyfork.databinding.MentorListFragmentBinding
 import com.googry.studyfork.databinding.MentorListItemBinding
+import com.googry.studyfork.ui.profile.ProfileActivity
+import io.reactivex.android.schedulers.AndroidSchedulers
 
 class MentorListFragment :
         BaseFragment<MentorListFragmentBinding>(R.layout.mentor_list_fragment) {
@@ -39,9 +43,23 @@ class MentorListFragment :
                                 binding?.run {
                                     profile = item
                                 }
+                                itemView.setOnClickListener {
+                                    Log.e("googry","onclick")
+                                    itemClickEvent.onNext(adapterPosition)
+                                }
                             }
                         }
+            }.apply {
+                compositeDisposable.add(itemClickEvent
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe {
+                            startActivity(Intent(context!!, ProfileActivity::class.java)
+                                    .putExtra(ProfileActivity.EXTRA_PROFILE,
+                                            (rvContent.adapter as? BaseRecyclerViewAdapter<Profile>)
+                                                    ?.getItem(it)))
+                        })
             }
+
         }
     }
 }

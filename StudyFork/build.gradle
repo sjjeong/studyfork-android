@@ -48,4 +48,6 @@ ext {
     glideVersion = '4.7.1'
 
     firebaseVersion = '16.0.0'
+
+    circleImageViewVersion = '2.2.0'
 }

@@ -24,7 +24,6 @@ class DevActivity :
         startActivity(Intent(this,
                 when (activityName) {
                     "MainActivity" -> MainActivity::class.java
-                    "ProfileActivity" -> ProfileActivity::class.java
                     "MentorListActivity" -> MentorListActivity::class.java
                     else -> error("Unknown Activity")
                 }))

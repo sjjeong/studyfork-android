@@ -29,7 +29,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:visibility="@{vm.mentors.getValue().size == 0 ? View.VISIBLE : View.GONE}"
+            android:visibility="@{vm.mentors.size == 0 ? View.VISIBLE : View.GONE}"
             android:layout_height="wrap_content" />
 
     </android.support.constraint.ConstraintLayout>

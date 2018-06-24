@@ -5,14 +5,13 @@ import com.googry.studyfork.base.ui.BaseViewModel
 import com.googry.studyfork.data.model.Profile
 import com.googry.studyfork.data.source.ProfileDataSource
 
-class ProfileViewModel(profileDataSource: ProfileDataSource)
+class ProfileViewModel(profileDataSource: ProfileDataSource,
+                       val profile: Profile)
     : BaseViewModel(profileDataSource) {
 
-    val profile = MutableLiveData<Profile>()
+    val liveProfile = MutableLiveData<Profile>()
 
     init {
-        profileDataSource.getProfile(email = "sjjeong1225@gmai.com") {
-            profile.postValue(it)
-        }
+        liveProfile.value = profile
     }
 }
